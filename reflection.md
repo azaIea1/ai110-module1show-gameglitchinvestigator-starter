@@ -10,6 +10,10 @@ Answer each question in 3 to 5 sentences. Be specific and honest about what actu
 
 ---
 
+Q1 Answer: I notcied a few bugs were hints working backwards, I was inputing negative numbers and it was telling me to go lower when the target was higher, another thing was
+when you won starting a new game a new game started but I wasnt allowed to submit my guesses. Lastly I wasnt too sure if this was a bug but it makes no sense that your able to guess numbers
+that are less than one and greater than 100. 
+
 ## 2. How did you use AI as a teammate?
 
 - Which AI tools did you use on this project (for example: ChatGPT, Gemini, Copilot)?
@@ -17,6 +21,12 @@ Answer each question in 3 to 5 sentences. Be specific and honest about what actu
 - Give one example of an AI suggestion that was incorrect or misleading (including what the AI suggested and how you verified the result).
 
 ---
+
+I used claude ai and one example of AI suggestion that was fixing the hints. It said: "Hints backwards — in check_guess, the messages are swapped (> says "Go HIGHER" when it should say "Go LOWER", and vice versa)" which was true. 
+
+One example of AI that was incorrect was 
+
+
 
 ## 3. Debugging and testing your fixes
 
