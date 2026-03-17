@@ -25,13 +25,21 @@ It wrote the code, ran away, and now the game is unplayable.
 
 ## 📝 Document Your Experience
 
-- [ ] Describe the game's purpose.
-- [ ] Detail which bugs you found.
-- [ ] Explain what fixes you applied.
+- [x] **Game purpose:** A number guessing game where the player tries to guess a secret number within a limited number of attempts. The game gives hints after each guess ("Too High" or "Too Low") and tracks a score based on how quickly you win.
+- [x] **Bugs found:**
+  - Hints were backwards — the `check_guess` function swapped the "Go HIGHER" and "Go LOWER" messages.
+  - On every even attempt, `app.py` converted the secret number to a string before comparing it, causing string-based comparison instead of numeric comparison and breaking hints every other guess.
+  - After winning and starting a new game, the game state wasn't resetting properly, preventing new guesses from being submitted.
+  - The input field allowed guesses outside the valid range (below 1 or above 100) without blocking them.
+- [x] **Fixes applied:**
+  - Refactored all four core functions (`get_range_for_difficulty`, `parse_guess`, `check_guess`, `update_score`) out of `app.py` and into `logic_utils.py`.
+  - Removed the string conversion bug in `app.py` — the integer secret is now always passed directly to `check_guess`.
+  - Updated `check_guess` in `logic_utils.py` to return a plain outcome string (`"Win"`, `"Too High"`, `"Too Low"`) instead of a tuple, matching what the tests expect.
+  - Added out-of-range validation in the submit handler to reject guesses outside `[low, high]`.
 
 ## 📸 Demo
 
-- [ ] [Insert a screenshot of your fixed, winning game here]
+- [x] ![Demo](ggigif.gif)
 
 ## 🚀 Stretch Features
 
